@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ /* 要素のサイズに影響を及ぼすCSSを記述した場合、paddingなどでサイズが変わらないようにする */
+* {
+  box-sizing: border-box;
+}
