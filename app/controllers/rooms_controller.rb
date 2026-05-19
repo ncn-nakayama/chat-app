@@ -1,7 +1,4 @@
 class RoomsController < ApplicationController
-  
-  def index
-  end
   # Roomインスタンス(view/rooms/new.html.erb)を@roomに代入
   def new
     @room = Room.new
@@ -16,7 +13,13 @@ class RoomsController < ApplicationController
     end
   end
 
-   private
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+  end
+
+  private
   # permit=ストロングパラメーター
   def room_params
     params.require(:room).permit(:name, user_ids: [])
