@@ -1,7 +1,4 @@
 class RoomsController < ApplicationController
-  
-  def index
-  end
   # Roomインスタンス(view/rooms/new.html.erb)を@roomに代入
   def new
     @room = Room.new
